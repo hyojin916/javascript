@@ -6,11 +6,11 @@ added ECMAScript 5
 use this for Valin Javascript. */
 'use strict';
 
-// 2. Variable (변경 될 수있는 것)
+// 2. Variable, rw(read, write)(변경 될 수있는 것)
 // let (added in ES6)
 let globalName = 'global name';
 {
-  let name = 'ellie';
+  let name = 'hyojin';
   console.log(name);
   name = 'hello';
   console.log(name);
@@ -20,7 +20,7 @@ console.log(name);
 console.log(globalName);
 
 /*var (don't  ever use this!)
- var hoisting: "어디에 선언했냐에 상관없이 한상 제일 위로 선언을 끌어올려 주는 것"
+ var hoisting: "어디에 선언했냐에 상관없이 항상 제일 위로 선언을 끌어올려 주는 것"
  (hoisting: 끌여 올려주다.)
  var has no block scope (즉 블럭을 철저히 무시함..ㄷㄷ) */
 {
@@ -29,18 +29,27 @@ console.log(globalName);
 }
 console.log(age);
 
-/* 3. Constants
-(Immutable Data type<-------> 값이 계속 변경될 수 있는 것은 Mutable Data type)
-favor immutable data type always for a few reasons:
-- security (보안상의 이유)
-- thread safety 
-- reduce human mistakes */
+/* 3. Constant, r(read)
+use const whenever possible.
+only use 'let' if variable needs to change.
+
+(Immutable Data type<-------> 값이 계속 변경될 수 있는 것은 Mutable Data type) */
 const dayInWeek = 7;
 const maxNumber = 5;
 
-/* 4. Variale types
+//Note!
+/*
+Immutable data types: premitive types, frozen objects (i.e. object.frozen())
+Mutable data types: all objects by default are mutable in JS.
+favor immutable data type always for a few reasons:
+- security (보안상의 이유)
+- thread safety 
+- reduce human mistakes
+*/
+
+/* 4. Variale Data types
 1. primitive type(더이상 작은 단위로 나눠질 수 없는 한가지의 아이템), single item: number, string boolean, null, undefiend, symbol
-2. object type(single item들을 여러 개 묶어서 한 단위로 관리해 줄 수 있도록 하는 것), box container
+2. object type(single item들을 여러 개 묶어서 한 단위로 관리해 줄 수 있도록 하는 것, box container)
 3. function, first-class function 
   (이 프로그래밍 언어에서는 function도 다른 data type처럼 변수에 할당이 가능하고, 그렇기 때문에 인자로 도 전달되고 retern도 가능하다.)
   */
