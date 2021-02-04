@@ -167,7 +167,7 @@ function calculate(command, a, b) {
     case 'multiply':
       return a * b;
     case 'remainder': 
-      return a ** b;
+      return a % b;
   }
 }
 console.log(calculate('add', 1, 1));

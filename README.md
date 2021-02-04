@@ -34,3 +34,14 @@
   - anonymous function / named function
   - Arrow Function
 
+#### 🎉 4 commit: Function Review
+- calculate (use switch)
+
+#### 🎉 5 commit: Class
+- Class declarations
+  - fields, method
+- Getter and Setters
+- Inhertance(상속) & OverWriting(다양성)
+  - extends
+  - super
+- Class Checking: "instanceof"
