@@ -1,3 +1,4 @@
+'use strict';
 /* function (함수)
 - 프로그램을 구성하는 기본적인 빌딩 블럭.
 - Sub-program 이라고도 불리며, 여러 번 재사용이 가능하다.
@@ -5,21 +6,21 @@
 */
 
 /*1. Function declatation (함수 선언)
-  function name(param1, param2) { body ... return; }
+  function name(pa ram1, param2) { body ... return; }
   * one function === one thing !! 
   * function naming: doSomething, verb, command 형태로 <--> Variable(변수) name은 명사 
   * function is object in JS: 함수는 오프젝트의 일종이다? --> 함수를 선언하고.을 누르면 함수의 속성 값을 확인 가능 
 */
 function printHello() {
   console.log('Hello');
-}
-printHello(); // 그런데 이 함수는 Hello 밖에 출력을 못한다. 더 유용한 함수를 만들려면 아래
+}  
+printHello(); // 그런데 이 함수는 Hello 밖에 출력을 못한다.(무쓸모) 더 유용한 함수를 만들려면 아래
 
 function log(message) {
   console.log(message);
 }
-log('Hello@') // 이렇게 param로 message를 전달하면 log함수를 호출하여 메세지가 출력하도록 함.
-
+log('Hello@'); // 이렇게 param로 message를 전달하면 log함수를 호출하여 메세지가 출력하도록 함.
+log(1234);
 // 2. Parameters (매개 변수)
 // premitive Parameters: value가 그대로 전달
 // object Parameters: refernce가 전달 
@@ -39,9 +40,12 @@ showMessage('Hi!');
 // 그래서 from에 원하는 default값인 'unknown'을 지정해 준 것임.
 
 // 4. Rest parameters (add in ES6) 배열 형태 arg(arrange)
-function printAll(...args) {
-  for (let i = 0; i < args.length; i++) { // 0으로 시작해서 arg의 갯수 만큼 출력
-    console.log(args [i]);
+function printAll (...args) {
+  for (let i = 0; i < args.length; i++) {
+    console.log(args[i]);
+  }
+  for (const arg of args) {
+    console.log(arg);
   }
 }
 printAll('dream', 'coding', 'ellie');
@@ -51,7 +55,7 @@ printAll('dream', 'coding', 'ellie');
 let globalMessage = 'global'; // global variable
 function printMessage() {
   let message = 'hello';
-  console.log(message); // local variable
+  console.log(message); // local variable (지역 변수)
   console.log(globalMessage); // --> 출력 가능
   function printAnother() { // (함수 안에 또 함수 가능: closure)
     console.log(message); // --> 출력 가능
@@ -100,7 +104,7 @@ function upgrade(user) {
 // Function expression (함수 표현)은 할당 된 다음부터 호출이 가능. (No hoisted)
 // Function declaration (함수 선언)은 hoisted가 된다. 즉, 함수가 선언되기 전에 호출해도 호출 가능! 
 const print = function () { //<-- 함수를 선언함과 동시에 print 변수에 할당함.
-                        //이렇게 함수에 이름이 없는 것: anonymous function
+                        //이렇게 함수에 이름이 없는 것: anonymous function <--> named function (function name() 형태)
   console.log('print');
 }
 print(); //--> print 출력
@@ -138,6 +142,11 @@ const simplePrint = function () {
 */
 // 이걸 아래처럼 바꿈 
 const simplePrint = () => console.log('simplePrint');
+const add = (a, b) => a + b;
+const simpleMultiply = (a, b)=> {
+  // do somthing more
+  return a * b;
+};
 
 // IIFE: Immediately Invoked Function Expression- 함수를 선언 함과 동시에 호출 
 (function hello () {
@@ -147,3 +156,22 @@ const simplePrint = () => console.log('simplePrint');
 // Fun Quiz time
 // function calculate(command, a, b)
 // command: add, substract, divide, multiply, remainder)
+function calculate(command, a, b) {
+  switch (command) {
+    case 'add':
+      return a + b;
+    case 'substract':
+      return a - b;
+    case 'divide':
+      return a / b;
+    case 'multiply':
+      return a * b;
+    case 'remainder': 
+      return a ** b;
+  }
+}
+console.log(calculate('add', 1, 1));
+console.log(calculate('substract', 1, 1));
+console.log(calculate('divide', 10, 2));
+console.log(calculate('multiply', 1, 100));
+console.log(calculate('remainder', 2, 2));
