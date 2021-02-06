@@ -45,3 +45,12 @@
   - extends
   - super
 - Class Checking: "instanceof"
+
+#### 🎉 5 commit: Object
+- Literals & Properties (object 생성)
+- Computed properties (계산된 속성)
+- Property value shorthand
+- Constructor Function (+ this)
+- in operator
+- for...in , for...of
+- object cloning
