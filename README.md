@@ -54,3 +54,18 @@
 - in operator
 - for...in , for...of
 - object cloning
+
+#### 🎉 6 commit: Array
+- 자료구조 개념
+- Array 사용
+- index position
+- Looping over an array 
+  - for
+  - for... of
+  - forEach
+- addition, deletion, copy, combine
+  - push, pop
+  - unshift, shift
+  - splice
+- Searching
+  - indexOf, includes, lastIndexOf
