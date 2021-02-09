@@ -69,3 +69,6 @@
   - splice
 - Searching
   - indexOf, includes, lastIndexOf
+
+#### 🎉 7 commit: Array-API
+- Array APIs practice

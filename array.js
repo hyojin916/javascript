@@ -73,10 +73,9 @@ console.log(fruits); // (5) ["🍎", "🍏", "🍉", "🍑", "🍋"]
 // combine two arrays.
 const fruits2 = ['🥑', '🥥'];
 const newFruits = fruits.concat(fruits2);
-console.log(newFruits);
+console.log(newFruits); // (7) ["🍎", "🍏", "🍉", "🍑", "🍋", "🥑", "🥥"]
 
 
-console.clear();
 console.log(fruits);(5) // ["🍎", "🍏", "🍉", "🍑", "🍋"]
 
 // 5. Searching 
