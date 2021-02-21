@@ -1,3 +1,5 @@
+'use strict';
+
 // 1. String concatenation 
 console.log('my' + 'cat');
 console.log('1' + 2);
@@ -95,16 +97,15 @@ console.log(null == undefined);
 console.log(null === undefined);
 
 // 8. Conditional operators: if
-/* if, else if, else  (어딘가 틀림...어디지..)
-const name = 'coder'; 
-if (name === 'ellie'); {
+// if, else if, else  (어딘가 틀림...어디지..)
+const name = 'coder';
+if (name === 'ellie') {
   console.log('Welcome, Ellie!');
 } else if (name === 'coder') {
-  console.log('You are amaving coder');
+  console.log('You are amazing coder');
 } else {
   console.log('unkowon');
 }
-*/
 
 // 9. Ternary operator: ? 
 // condition ? value : value2;
@@ -137,17 +138,22 @@ while (i > 0) {
   i--;
 }
 
-/* do While loop: body code is executed forst,
+/* do While loop: body code is executed first,
   then check the condition. */
+// 조건문이 맞을 때만 블럭을 실행하고 싶다면 while, 블럭을 먼저 실행하고싶으면 do while.
 do {
   console.log(`do whileL ${i}`);
   i--;
 } while (i > 0);
 
 /* for loop: for (begin; condition; step)
-begin은 한 번만 호출하고 > 블럭이 실행하기 전에 conditin 이 맞는지 검사하고 > 다음 step (컨디션이 안맞을 때 까지.)
+begin은 한 번만 호출하고 > 블럭을 실행하기 전에 conditin 이 맞는지 검사하고 > 다음 step (컨디션이 안맞을 때 까지.)
 */
-for (i =3; i > 0; i = i - 2) {
+for (i = 3; i > 0; i--) {
+  console.log(`for: ${i}`);
+}
+
+for (let i = 3; i > 0; i = i - 2) {
   // inline variable decoration
   console.log(`inline variable fle: ${i}`);
 }

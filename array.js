@@ -17,7 +17,7 @@ console.log(fruits); // (2) ["🍎", "🍌"]
 console.log(fruits.length); // 2
 console.log(fruits[0]); // 🍎 (0 부터 시작하기 때문)
 console.log(fruits[1]);
-console.log(fruits[2]);
+console.log(fruits[2]); // undefined
 console.log(fruits[fruits.length - 1]); // 배열의 마지막 아이템을 찾을 때: length-1
 
 // 3. Looping over an array
@@ -29,7 +29,7 @@ for (let i = 0; i < fruits.length; i++) {
 
 // b. for of
 for (let fruit of fruits) {
-  console.log(fruit)
+  console.log(fruit);
 }
 
 // c. forEach
@@ -82,7 +82,7 @@ console.log(fruits);(5) // ["🍎", "🍏", "🍉", "🍑", "🍋"]
 // indexOf: find the index
 console.log(fruits.indexOf('🍎')); // 0 
 console.log(fruits.indexOf('🍉')); // 2
-console.log(fruits.includes('🥥')); // -1
+console.log(fruits.indexOf('🥥')); // -1
 
 // includes
 console.log(fruits.includes('🍎')); // true
@@ -91,7 +91,5 @@ console.log(fruits.includes('🥥')); // false
 // lastIndexOf
 fruits.push('🍎');
 console.log(fruits); // (6) ["🍎", "🍏", "🍉", "🍑", "🍋", "🍎"]
-console.log(fruits.indexOf('🍎')); // 0 
+console.log(fruits.indexOf('🍎')); // 0 (제일 첫번째 값 출력)
 console.log(fruits.lastIndexOf('🍎')); // 5 
-
-

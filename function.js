@@ -21,6 +21,7 @@ function log(message) {
 }
 log('Hello@'); // 이렇게 param로 message를 전달하면 log함수를 호출하여 메세지가 출력하도록 함.
 log(1234);
+
 // 2. Parameters (매개 변수)
 // premitive Parameters: value가 그대로 전달
 // object Parameters: refernce가 전달 
@@ -44,13 +45,14 @@ function printAll (...args) {
   for (let i = 0; i < args.length; i++) {
     console.log(args[i]);
   }
+  // 다른 간단한 방법
   for (const arg of args) {
     console.log(arg);
   }
 }
 printAll('dream', 'coding', 'ellie');
 
-//5. Local scope 
+//5. Local scope
 // (💥 밖에서는 안이 보이지 않고, 안에서만 밖을 볼 수있다.!!!)
 let globalMessage = 'global'; // global variable
 function printMessage() {
@@ -119,15 +121,15 @@ function randomQuiz(answer, printYes, printNo) {
     printNo();
   }
 }
-// anonymous function (function 옆에 그냥 빈 괄호)
+
 console.log('yes!');
-const printYes = function () { 
+const printYes = function () { // anonymous function (function 옆에 그냥 빈 괄호)
 };
 
-// named function (function이름이 print로 지정)
+// named function
 // 1)디버깅할 때 함수이름 나오게 함  
 // 2) 함수 안에서 자기 자신을 또다른 함수로 호출 할 때 (recursions) 
-const printNo = function print() { 
+const printNo = function print() { // named function (function이름이 print로 지정)
   console.log('no!');
 };
 randomQuiz('wrong', printYes, printNo); // --> 'no!' 출력

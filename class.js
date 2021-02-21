@@ -70,8 +70,8 @@
 
   class Rectangle extends Shape {} // 👉 extends 를 써서 Shape를 '상속!'받음
   class Triangle extends Shape { // 👉 extends 를 써서 Shape를 '상속!'받음
-    draw() {                     // 👉 Triangle class는 이렇게 OverWriting을 적용 함!
-      super.draw();              // 👉 아래에는 OverWriting 받으면서도 'super'을 사용하여 부모의 method도 그대로 가져옴.
+    draw() {                     // 👉 Triangle class는 (필요한 함수에만) 이렇게 OverWriting을 적용 함!
+      super.draw();              // 👉 아래에는 OverWriting 받으면서도 'super'을 사용하여 ⭐️부모의 method도 그대로 가져옴.⭐️
       console.log('🔺');
     }
     getArea() {

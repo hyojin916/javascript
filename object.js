@@ -78,10 +78,21 @@ for(value of array) {
 // object.assign(dest, [obj1, obj2, obj3...])
 const user = {name: 'hyojin', age: '26'};
 const user2 = user;
-console.log(user); // 
+console.log(user);
+
+// old way 
+const user3 = {};
+for (key in user) {
+  user3[key] = user[key];
+}
+console.log(user3);
+
+const user4 = Object.assign({}, user);
+console.log(user4);
+
 // another example
 const fruit1 = {color: 'red'};
 const fruit2 = {color: 'blue', size: 'big'};
 const mixed = Object.assign({}, fruit1, fruit2); //뒤에 나오는 것이 앞에 나온 동일한 속성 값을 덮어 씌움.
-console.log(mixed.color); // blue 출력 
+console.log(mixed.color); // blue 출력
 console.log(mixed.size); // big 출력
