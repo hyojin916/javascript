@@ -18,7 +18,7 @@
 
     // method
     speak() {
-      console.log(`${this.name}: hello!`); //this(생성된 object-hyojin)
+      console.log(`${this.name}: hello!`); //this(this class에 있는 name)
     }
   }
 

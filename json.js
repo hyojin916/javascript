@@ -25,7 +25,7 @@ console.log(json); // 'jump'함수는 object 내에 있는 data가 아니기 떄
 json = JSON.stringify(rabbit, ['name', 'color']);
 console.log(json); //{"name":"tori","color":"white"}
 
-json = JSON.stringify(rabbit, (key, value) => {
+json = JSON.stringify(rabbit, (key, value) => { // 조금 더 세밀하게 통제하고 싶을 때 이렇게 callback 함수를 쓸 수 있다.
   console.log(`key: ${key}, value: ${value}`);
   return key === 'name' ? 'hyojin' : value;
 });

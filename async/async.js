@@ -6,7 +6,7 @@
 // 1. asynce
 async function fetchUser() {
   // do network reqeust in 10 secs...
-  return('ellie');
+  return 'ellie';
 }
 
 /* 'Promise'를 쓸 때 
@@ -19,7 +19,7 @@ function fetchUser() {
 */
 
 const user = fetchUser();
-user.then(console.log); // --> ellie
+user.then(console.log); // --> JS는 동기적으로 작동하기 때문에 10초가 지난 뒤에 ellie가 뜬다. 
 console.log(user); // -->  Promise {<fulfilled>: "ellie"}
 
 // 2. await ✨
@@ -36,12 +36,13 @@ async function getBanana() {
   await delay(1000);
   return '🍌';
 }
-/* 콜백지옥처럼 되버림 더 간단하게 하려면? 
+/* 콜백지옥처럼 되버림
 function pickFruits() {
   return getApple().then(apple => {
     return getBanana().then(banana => `${apple} + ${banana}`);
   });
 }
+더 간단하게 하려면? 
 */
 
 // async + 병렬로 정리 (둘 다 1초씩 걸릴 때 2초 --> 1초)

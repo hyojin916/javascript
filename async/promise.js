@@ -2,7 +2,7 @@
 
 // "Promise" is a JavaScript Object! for asynchornous(비동기) operation.
 // callback함수 대신에 유용하게 쓸 수 있는 object 입니다.
-// 1) Stare(상태): pending -> fulfilled or rejected(파일을 찾을 수 없거나 네트워크에 문제가 생겼을 때)
+// 1) State(상태): pending -> fulfilled or rejected(파일을 찾을 수 없거나 네트워크에 문제가 생겼을 때)
 // 2) Producer vs Consumer
 
 // 1. Producer
@@ -53,7 +53,7 @@ const getHen = () =>
   });
 const getEgg = hen =>
   new Promise((resolve, reject) => {
-    setTimeout(() => resolve(`${hen} => 🥚`), 1000);
+    setTimeout(() => reject(new Error(`error! ${hen} => 🥚`)), 1000);
   });
 const cook = egg => 
   new Promise((resolve, reject) => {
@@ -68,7 +68,11 @@ getHen()
 // 받아오는 것이 하나면 아래처럼 간단하게 표현할 수 있다
 getHen()
   .then(getEgg)
+  .catch(error => {
+    return '🥖';
+  })
   .then(cook)
-  .then(console.log);
+  .then(console.log)
+  .catch(console.log);
 
   // 5. 
